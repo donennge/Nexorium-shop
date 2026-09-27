@@ -33,7 +33,6 @@ export default async function handler(req, res) {
   const amount        = String(body.amount        || '').trim();
   const currency      = String(body.currency      || 'PHP').trim();
   const paymentMethod = String(body.paymentMethod || '').trim();
-  const receiptRef    = String(body.receiptRef    || '').trim();
   const status        = String(body.status        || 'PENDING REVIEW').trim();
   const shopUrl       = String(body.shopUrl       || '').trim();
 
@@ -50,7 +49,6 @@ export default async function handler(req, res) {
     (duration ? '<b>Duration:</b> ' + esc(duration) + '\n' : '') +
     '<b>Amount:</b> ' + esc(currency) + ' ' + esc(amount) + '\n' +
     '<b>Payment Method:</b> ' + esc(paymentMethod) + '\n\n' +
-    '<b>Receipt:</b> ' + esc(receiptRef || '—') + '\n\n' +
     '<b>Status:</b> ' + esc(status) + '\n' +
     '<b>SHOP:</b> ' + esc(shopUrl || '—');
 
